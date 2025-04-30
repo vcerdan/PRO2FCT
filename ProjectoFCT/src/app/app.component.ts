@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
+  standalone: true,
+  imports: [IonicModule, RouterOutlet],
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'ProjectoFCT';
-}
+export class AppComponent { }
