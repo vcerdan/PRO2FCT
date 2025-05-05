@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.backend.getSaludo().subscribe({
-      next: data => (this.mensaje = data.mensaje),
+      next: data => this.mensaje = data.mensaje,
       error: err => console.error(err)
     });
   }

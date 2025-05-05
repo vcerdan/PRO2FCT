@@ -1,22 +1,19 @@
-
-import { importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { provideRouter }       from '@angular/router';
+import { provideHttpClient }   from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
-
-
+import { routes }      from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    importProvidersFrom(IonicModule.forRoot()),
+    // Sólo inicializamos Ionic sin animaciones
+    importProvidersFrom(IonicModule.forRoot({ animated: false })),
+
+    // Cliente HTTP
     provideHttpClient(),
-    provideRouter(routes),
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideClientHydration(withEventReplay())
+
+    // Routing básico
+    provideRouter(routes)
   ]
 };
-
