@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [
-    IonicModule  // Import the module directly without forRoot()
-  ],
   selector: 'app-root',
+  imports: [RouterModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'ProjectoFCT';
+}

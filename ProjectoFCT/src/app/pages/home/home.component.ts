@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { BackendService } from '../../servicios/backend.service';
 
 @Component({
-  standalone: true,
-  imports: [IonicModule],
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
